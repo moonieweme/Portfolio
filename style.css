@@ -9,15 +9,24 @@ body {
 }
 
 
+
 .header{
     display: flex;
     align-items: center; 
     justify-content: space-between; 
-    padding: 5px;
-    background-image: linear-gradient(90deg, #1f8cf9, #7a40f8, #1f8cf9);
+    padding: 10px;
+    width: 100%;
+    
+
+    position: fixed;
+   
+    /* background-image: linear-gradient(90deg, #1f8cf9, #7a40f8, #1f8cf9);   */
+ 
     background-size: 400% 400%;
 
     animation: headerAnimation 8s linear infinite;
+
+    
 }
 
 @keyframes headerAnimation {
@@ -34,18 +43,70 @@ body {
     display: flex;
     padding-right: 40px;
     align-content: flex-end;
-    gap: 10px;
-   
+    gap: 20px; 
+    
 }
 
 nav a {
     text-decoration: none;
     color: #fff;
+    text-transform: uppercase;
     
 }
 
 h1 {
     color: #fff;
-    padding-top: 50px;
+    padding-top: 80px;
     text-align: center;
+    
 }
+
+
+.project-gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.project-gallery img {
+    object-fit: cover;
+    padding: 20px 20px;
+
+    max-width: 350px;
+    
+}
+
+.arduino-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* To stack images and videos vertically, if needed */
+}
+
+.arduino-images img {
+    width: 40%;
+    height: 20%;
+    margin: 20px 0; /* Optional: add space around images */
+}
+
+.arduino-images video {
+    width: 40%;
+    height: auto;
+    margin: 20px 0; /* Optional: add space around videos */
+}
+
+.vex-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.vex-images video {
+    width: 60%;
+    height: auto;
+}
+
