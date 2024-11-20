@@ -1,29 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AI Project</title>
-    <link rel="stylesheet" href="style.css"/>
-</head>
-<body>
-    <div class = "header">
-        <div class = "logo">
-            <a href="index.html" target="_blank">
-                <img src="ak logo 2.png" alt="ak logo" style="cursor: pointer; border: none;">
-            </a>
-        </div>
-
-        <nav class = nav-items> 
-            <a href = "projects.html">projects</a>
-            <a href = "about_me.html">about me</a>
-            <a href = "contact.html">contact</a>
-        </nav>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <!-- <script defer src="https://pyscript.net/latest/pyscript.js"></script> -->
+  </head>
+  <body>
+    <div class="header">
+      <div class="logo">
+        <a href="index.html" target="_blank">
+          <img
+            src="Images/ak logo 2.png"
+            alt="ak logo"
+            style="cursor: pointer; border: none"
+          />
+        </a>
+      </div>
+      <nav class="nav-items">
+        <a href="projects.html">projects</a>
+        <a href="about_me.html">about me</a>
+        <a href="contact.html">contact</a>
+      </nav>
     </div>
 
-    <h1>Artificial Intelligence</h1>
+    <h1>Predicting Student's Exam Score</h1>
 
+    <form id="predictionForm">
+      <label for="hours_studied">Hours Studied:</label>
+      <input
+        type="number"
+        id="hours_studied"
+        name="hours_studied"
+        required
+      /><br /><br />
 
+      <label for="attendance">Attendance (%):</label>
+      <input
+        type="number"
+        id="attendance"
+        name="attendance"
+        required
+      /><br /><br />
 
-</body>
+      <label for="parental_involvement">Parental Involvement (1-5):</label>
+      <input
+        type="number"
+        id="parental_involvement"
+        name="parental_involvement"
+        required
+      /><br /><br />
+
+      <label for="access_to_resources">Access to Resources (1-5):</label>
+      <input
+        type="number"
+        id="access_to_resources"
+        name="access_to_resources"
+        required
+      /><br /><br />
+
+      <label for="extracurricular_activities"
+        >Extracurricular Activities (1-5):</label
+      >
+      <input
+        type="number"
+        id="extracurricular_activities"
+        name="extracurricular_activities"
+        required
+      /><br /><br />
+
+      <label for="sleep_hours">Sleep Hours:</label>
+      <input
+        type="number"
+        id="sleep_hours"
+        name="sleep_hours"
+        required
+      /><br /><br />
+
+      <label for="previous_scores">Previous Scores (1-100):</label>
+      <input
+        type="number"
+        id="previous_scores"
+        name="previous_scores"
+        required
+      /><br /><br />
+
+      <label for="motivation_level">Motivation Level (1-5):</label>
+      <input
+        type="number"
+        id="motivation_level"
+        name="motivation_level"
+        required
+      /><br /><br />
+
+      <label for="internet_access">Internet Access (1=Yes, 0=No):</label>
+      <input
+        type="number"
+        id="internet_access"
+        name="internet_access"
+        min="0"
+        max="1"
+        required
+      /><br /><br />
+
+      <label for="tutoring_sessions">Tutoring Sessions (1-5):</label>
+      <input
+        type="number"
+        id="tutoring_sessions"
+        name="tutoring_sessions"
+        required
+      /><br /><br />
+
+      <label for="family_income">Family Income (in USD):</label>
+      <input
+        type="number"
+        id="family_income"
+        name="family_income"
+        required
+      /><br /><br />
+
+      <label for="teacher_quality">Teacher Quality (1-5):</label>
+      <input
+        type="number"
+        id="teacher_quality"
+        name="teacher_quality"
+        required
+      /><br /><br />
+
+      <label for="school_type">School Type (1=Public, 0=Private):</label>
+      <input
+        type="number"
+        id="school_type"
+        name="school_type"
+        min="0"
+        max="1"
+        required
+      /><br /><br />
+
+      <label for="peer_influence">Peer Influence (1-5):</label>
+      <input
+        type="number"
+        id="peer_influence"
+        name="peer_influence"
+        required
+      /><br /><br />
+
+      <label for="physical_activity">Physical Activity (1-5):</label>
+      <input
+        type="number"
+        id="physical_activity"
+        name="physical_activity"
+        required
+      /><br /><br />
+
+      <label for="learning_disabilities"
+        >Learning Disabilities (1=Yes, 0=No):</label
+      >
+      <input
+        type="number"
+        id="learning_disabilities"
+        name="learning_disabilities"
+        min="0"
+        max="1"
+        required
+      /><br /><br />
+
+      <label for="parental_education_level"
+        >Parental Education Level (1-5):</label
+      >
+      <input
+        type="number"
+        id="parental_education_level"
+        name="parental_education_level"
+        required
+      /><br /><br />
+
+      <label for="distance_from_home">Distance from Home (km):</label>
+      <input
+        type="number"
+        id="distance_from_home"
+        name="distance_from_home"
+        required
+      /><br /><br />
+
+      <label for="gender">Gender (1=Male, 0=Female):</label>
+      <input
+        type="number"
+        id="gender"
+        name="gender"
+        min="0"
+        max="1"
+        required
+      /><br /><br />
+
+      <button type="submit">Predict Score</button>
+    </form>
+
+    <h2 id="predictionResult"></h2>
+
+    <script>
+      document
+        .getElementById("predictionForm")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault(); // Prevent the default form submission
+
+          // Gather form data
+          const data = {
+            hours_studied: document.getElementById("hours_studied").value,
+            attendance: document.getElementById("attendance").value,
+            parental_involvement: document.getElementById(
+              "parental_involvement"
+            ).value,
+            access_to_resources: document.getElementById("access_to_resources")
+              .value,
+            extracurricular_activities: document.getElementById(
+              "extracurricular_activities"
+            ).value,
+            sleep_hours: document.getElementById("sleep_hours").value,
+            previous_scores: document.getElementById("previous_scores").value,
+            motivation_level: document.getElementById("motivation_level").value,
+            internet_access: document.getElementById("internet_access").value,
+            tutoring_sessions:
+              document.getElementById("tutoring_sessions").value,
+            family_income: document.getElementById("family_income").value,
+            teacher_quality: document.getElementById("teacher_quality").value,
+            school_type: document.getElementById("school_type").value,
+            peer_influence: document.getElementById("peer_influence").value,
+            physical_activity:
+              document.getElementById("physical_activity").value,
+            learning_disabilities: document.getElementById(
+              "learning_disabilities"
+            ).value,
+            parental_education_level: document.getElementById(
+              "parental_education_level"
+            ).value,
+            distance_from_home:
+              document.getElementById("distance_from_home").value,
+            gender: document.getElementById("gender").value,
+          };
+
+          console.log(data); // Add this line to check the form data
+
+          try {
+            // Send the data to the API
+            const response = await fetch(
+              "http://127.0.0.1:5000/predict", // replace with your actual API URL
+              {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+              }
+            );
+
+            if (!response.ok) {
+              throw new Error("Network response was not ok");
+            }
+
+            // Parse the JSON response
+            const result = await response.json();
+            document.getElementById("predictionResult").textContent =
+              "Predicted Exam Score: " + result.prediction;
+          } catch (error) {
+            console.error("Error:", error);
+            document.getElementById("predictionResult").textContent =
+              "An error occurred while predicting.";
+          }
+        });
+    </script>
+  </body>
 </html>
