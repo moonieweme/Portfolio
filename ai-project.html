@@ -5,13 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AI Project</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
-    <!-- <script defer src="https://pyscript.net/latest/pyscript.js"></script> -->
   </head>
   <body>
     <div class="header">
       <div class="logo">
-        <a href="index.html" target="_blank">
+        <a href="index.html" target="_self">
           <img
             src="Images/ak logo 2.png"
             alt="ak logo"
@@ -20,180 +18,188 @@
         </a>
       </div>
       <nav class="nav-items">
-        <a href="projects.html">projects</a>
-        <a href="about_me.html">about me</a>
-        <a href="contact.html">contact</a>
+        <a href="projects.html" target="_self">projects</a>
+        <a href="about_me.html" target="_self">about me</a>
+        <a href="contact.html" target="_self">contact</a>
       </nav>
     </div>
 
     <h1>Predicting Student's Exam Score</h1>
 
     <form id="predictionForm">
-      <label for="hours_studied">Hours Studied:</label>
+      <label for="hours_studied">Hours Studied (Per Week):</label>
       <input
         type="number"
         id="hours_studied"
         name="hours_studied"
         required
+        min="0"
+        max="168"
       /><br /><br />
 
-      <label for="attendance">Attendance (%):</label>
+      <label for="attendance">Attendance (% Of Class Attended):</label>
       <input
         type="number"
         id="attendance"
         name="attendance"
         required
-      /><br /><br />
+        min="0"
+        max="100"
+      />
+      <br /><br />
 
-      <label for="parental_involvement">Parental Involvement (1-5):</label>
-      <input
-        type="number"
-        id="parental_involvement"
-        name="parental_involvement"
-        required
-      /><br /><br />
+      <label for="parental_involvement">Parental Involvement:</label>
+      <select id="parental_involvement" name="parental_involvement" required>
+        <option value="1">Low</option>
+        <option value="2">Moderate</option>
+        <option value="3">High</option>
+      </select>
+      <br /><br />
 
       <label for="access_to_resources">Access to Resources (1-5):</label>
-      <input
-        type="number"
-        id="access_to_resources"
-        name="access_to_resources"
-        required
-      /><br /><br />
+      <select id="access_to_resources" name="access_to_resources" required>
+        <option value="1">Low</option>
+        <option value="2">Moderate</option>
+        <option value="3">High</option>
+      </select>
+      <br /><br />
 
       <label for="extracurricular_activities"
-        >Extracurricular Activities (1-5):</label
+        >Extracurricular Activities:</label
       >
-      <input
-        type="number"
+      <select
         id="extracurricular_activities"
         name="extracurricular_activities"
         required
-      /><br /><br />
+      >
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+      </select>
+      <br /><br />
 
-      <label for="sleep_hours">Sleep Hours:</label>
+      <label for="sleep_hours">Sleep (Hours Per Night):</label>
       <input
         type="number"
         id="sleep_hours"
         name="sleep_hours"
         required
-      /><br /><br />
+        min="0"
+        max="24"
+      />
+      <br /><br />
 
-      <label for="previous_scores">Previous Scores (1-100):</label>
+      <label for="previous_scores">Previous Exam Scores (0-100):</label>
       <input
         type="number"
         id="previous_scores"
         name="previous_scores"
-        required
-      /><br /><br />
-
-      <label for="motivation_level">Motivation Level (1-5):</label>
-      <input
-        type="number"
-        id="motivation_level"
-        name="motivation_level"
-        required
-      /><br /><br />
-
-      <label for="internet_access">Internet Access (1=Yes, 0=No):</label>
-      <input
-        type="number"
-        id="internet_access"
-        name="internet_access"
         min="0"
-        max="1"
+        max="100"
         required
-      /><br /><br />
+      />
+      <br /><br />
 
-      <label for="tutoring_sessions">Tutoring Sessions (1-5):</label>
+      <label for="motivation_level">Motivation Level:</label>
+      <select id="motivation_level" name="motivation_level" required>
+        <option value="1">Low</option>
+        <option value="2">Moderate</option>
+        <option value="3">High</option>
+      </select>
+      <br /><br />
+
+      <label for="internet_access">Internet Access:</label>
+      <select id="internet_access" name="internet_access" required>
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+      </select>
+      <br /><br />
+
+      <label for="tutoring_sessions"
+        >Tutoring Sessions (Sessions Attended Per Month):</label
+      >
       <input
         type="number"
         id="tutoring_sessions"
         name="tutoring_sessions"
         required
-      /><br /><br />
+      />
+      <br /><br />
 
-      <label for="family_income">Family Income (in USD):</label>
-      <input
-        type="number"
-        id="family_income"
-        name="family_income"
-        required
-      /><br /><br />
+      <label for="family_income">Family Income:</label>
+      <select id="family_income" name="family_income" required>
+        <option value="1">Low</option>
+        <option value="2">Moderate</option>
+        <option value="3">High</option>
+      </select>
+      <br /><br />
 
-      <label for="teacher_quality">Teacher Quality (1-5):</label>
-      <input
-        type="number"
-        id="teacher_quality"
-        name="teacher_quality"
-        required
-      /><br /><br />
+      <label for="teacher_quality">Teacher Quality:</label>
+      <select id="motivation_level" name="motivation_level" required>
+        <option value="1">Low</option>
+        <option value="2">Moderate</option>
+        <option value="3">High</option>
+      </select>
+      <br /><br />
 
-      <label for="school_type">School Type (1=Public, 0=Private):</label>
-      <input
-        type="number"
-        id="school_type"
-        name="school_type"
-        min="0"
-        max="1"
-        required
-      /><br /><br />
+      <label for="school_type">School Type:</label>
+      <select id="school_type" name="school_type" required>
+        <option value="0">Public</option>
+        <option value="1">Private</option>
+      </select>
+      <br /><br />
 
-      <label for="peer_influence">Peer Influence (1-5):</label>
-      <input
-        type="number"
-        id="peer_influence"
-        name="peer_influence"
-        required
-      /><br /><br />
+      <label for="peer_influence">Peer Influence:</label>
+      <select id="peer_influence" name="peer_influence" required>
+        <option value="0">Negative</option>
+        <option value="1">Neutral</option>
+        <option value="2">Positive</option>
+      </select>
+      <br /><br />
 
-      <label for="physical_activity">Physical Activity (1-5):</label>
+      <label for="physical_activity">Physical Activity (Hours Per Week):</label>
       <input
         type="number"
         id="physical_activity"
         name="physical_activity"
-        required
-      /><br /><br />
-
-      <label for="learning_disabilities"
-        >Learning Disabilities (1=Yes, 0=No):</label
-      >
-      <input
-        type="number"
-        id="learning_disabilities"
-        name="learning_disabilities"
         min="0"
-        max="1"
+        max=""
         required
-      /><br /><br />
+      />
+      <br /><br />
 
-      <label for="parental_education_level"
-        >Parental Education Level (1-5):</label
-      >
-      <input
-        type="number"
+      <label for="learning_disabilities">Learning Disabilities:</label>
+      <select id="learning_disabilities" name="learning_disabilities" required>
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+      </select>
+      <br /><br />
+
+      <label for="parental_education_level">Parental Education Level:</label>
+      <select
         id="parental_education_level"
         name="parental_education_level"
         required
-      /><br /><br />
+      >
+        <option value="1">Highschool</option>
+        <option value="2">College</option>
+        <option value="3">Postgraduate</option>
+      </select>
+      <br /><br />
 
-      <label for="distance_from_home">Distance from Home (km):</label>
-      <input
-        type="number"
-        id="distance_from_home"
-        name="distance_from_home"
-        required
-      /><br /><br />
+      <label for="distance_from_home">Distance from Home:</label>
+      <select id="distance_from_home" name="distance_from_home" required>
+        <option value="1">Near</option>
+        <option value="2">Moderate</option>
+        <option value="3">Far</option>
+      </select>
+      <br /><br />
 
-      <label for="gender">Gender (1=Male, 0=Female):</label>
-      <input
-        type="number"
-        id="gender"
-        name="gender"
-        min="0"
-        max="1"
-        required
-      /><br /><br />
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender" required>
+        <option value="0">Male</option>
+        <option value="1">Female</option>
+      </select>
+      <br /><br />
 
       <button type="submit">Predict Score</button>
     </form>
@@ -246,7 +252,7 @@
           try {
             // Send the data to the API
             const response = await fetch(
-              "https://api-qyoc.onrender.com/predict", 
+              "https://api-qyoc.onrender.com/predict",
               {
                 method: "POST",
                 headers: {
@@ -261,6 +267,7 @@
             }
 
             // Parse the JSON response
+
             const result = await response.json();
             document.getElementById("predictionResult").textContent =
               "Predicted Exam Score: " + result.prediction;

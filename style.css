@@ -6,6 +6,8 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   background-color: #121439;
 }
 
@@ -18,11 +20,13 @@ body {
 
   position: fixed;
 
-  background-image: linear-gradient(90deg, #1f8cf9, #7a40f8, #1f8cf9);
+  background-image: linear-gradient(90deg, #0051ff7b, #7a40f87b, #0051ff7b);
 
   background-size: 400% 400%;
 
   animation: headerAnimation 8s linear infinite;
+
+  backdrop-filter: blur(5px);
 }
 
 @keyframes headerAnimation {
@@ -36,11 +40,13 @@ body {
 
 .logo {
   padding-left: 40px;
+  padding-top: 10px;
 }
 
 .nav-items {
   display: flex;
   padding-right: 40px;
+  padding-top: 10px;
   align-content: flex-end;
   gap: 20px;
 }
@@ -49,6 +55,11 @@ nav a {
   text-decoration: none;
   color: #fff;
   text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffffff88;
 }
 
 h1 {
@@ -107,6 +118,20 @@ h1 {
   color: white;
 }
 
-h2 {
+h2,
+p {
+  display: flex;
   color: white;
+}
+
+#austinPortrait {
+  display: flex;
+  max-width: 300px;
+  height: auto;
+  border-radius: 10px;
+  transition: box-shadow 0.5s ease;
+}
+
+#austinPortrait:hover {
+  box-shadow: 20px 20px 60px #282d85;
 }
