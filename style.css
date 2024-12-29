@@ -1,137 +1,234 @@
+/* ========== Global Styles ========== */
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
+  background-color: #07081b;
+  color: white;
+  line-height: 1.5;
+}
+
+/* ========== Header (Navigation Bar) ========== */
+.nav-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 7vw;
+}
+
+.nav-bar {
   display: flex;
   flex-direction: column;
-  background-color: #121439;
+  justify-content: center; /* Vertically center items within the navbar */
+  align-items: center; /* Horizontally center the items */
+  height: 100%; /* Take up the full height of the parent container */
 }
 
-.header {
+.nav-bar img {
+  width: 30px;
+  cursor: pointer;
+  margin: 3vh 0; /* Add spacing between icons */
+}
+
+/* ========== Main Content ========== */
+#main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Welcome Section */
+.welcome-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  padding: 20px;
+  height: auto;
+}
+
+.welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 30vw;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.detail-item {
+  padding-left: 4px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 10px;
-  width: 100%;
-
-  position: fixed;
-
-  background-image: linear-gradient(90deg, #0051ff7b, #7a40f87b, #0051ff7b);
-
-  background-size: 400% 400%;
-
-  animation: headerAnimation 8s linear infinite;
-
-  backdrop-filter: blur(5px);
 }
 
-@keyframes headerAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 130% 50%;
-  }
+.space {
+  height: 20vh;
 }
 
-.logo {
-  padding-left: 40px;
-  padding-top: 10px;
+#hi {
+  font-size: 4.4rem;
+  margin-bottom: 18px;
 }
 
-.nav-items {
+#building,
+#locopin {
+  width: 1.5em;
+  margin-right: 10px;
+}
+
+#portrait {
+  width: 13vw;
+  height: 13vw;
+  border-radius: 50%;
+  background-image: url("IMG_7251-removebg-preview.png");
+  background-size: cover;
+  transition: background-image 0.3s ease-in-out;
+}
+
+#portrait:hover {
+  background-image: url("IMG_6981-removebg-preview.png");
+}
+
+/* Mission Section */
+#mission {
+  margin-top: 18px;
+}
+
+#mission-text {
+  width: 44vw;
+  font-size: 0.9rem;
+  line-height: 1.6rem;
+}
+
+/* Tech Stack Section*/
+.tech {
   display: flex;
-  padding-right: 40px;
-  padding-top: 10px;
-  align-content: flex-end;
-  gap: 20px;
-}
-
-nav a {
-  text-decoration: none;
-  color: #fff;
-  text-transform: uppercase;
-  transition: color 0.3s ease;
-}
-
-nav a:hover {
-  color: #ffffff88;
-}
-
-h1 {
-  color: #fff;
-  padding-top: 80px;
-  text-align: center;
-}
-
-.project-gallery {
-  display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  gap: 40px 160px;
+  width: 55vw;
 }
 
-.project-gallery img {
-  object-fit: cover;
-  padding: 20px 20px;
-
-  max-width: 350px;
-}
-
-.arduino-images {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column; /* To stack images and videos vertically, if needed */
-}
-
-.arduino-images img {
-  width: 40%;
-  height: 20%;
-  margin: 20px 0; /* Optional: add space around images */
-}
-
-.arduino-images video {
-  width: 40%;
-  height: auto;
-  margin: 20px 0; /* Optional: add space around videos */
-}
-
-.vex-images {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.vex-images video {
-  width: 60%;
+.tech img {
+  width: 130px;
   height: auto;
 }
 
-#predictionForm label {
-  color: white;
+#tech-text {
+  padding-bottom: 40px;
 }
 
-h2,
-p {
+/*Project Section*/
+#projects {
+  scroll-margin-top: 80px;
   display: flex;
-  color: white;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 80px 0px;
+  width: 30vw;
 }
 
-#austinPortrait {
-  display: flex;
-  max-width: 300px;
+#projects img {
+  display: block;
+  width: 13vw;
   height: auto;
+  border-radius: 10px 10px 0 0;
+}
+
+#project-text {
+  padding-left: 100px;
+}
+
+.desc {
+  width: 13vw;
+
+  background-color: #202046;
+  border-radius: 0 0 10px 10px;
+}
+.title {
+  font-size: 0.8rem;
+  padding-left: 7px;
+  padding-top: 5px;
+}
+
+.deets {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.deets h6 {
+  font-size: 0.7rem;
+  padding: 2px 5px 5px 7px;
+  color: rgb(176, 176, 176);
+}
+
+.project {
   border-radius: 10px;
-  transition: box-shadow 0.5s ease;
+  transition: box-shadow 0.3s ease-in-out;
 }
 
-#austinPortrait:hover {
-  box-shadow: 20px 20px 60px #282d85;
+.project:hover {
+  box-shadow: 3px 3px 50px 10px #4e3ede;
+}
+
+/*Profile Section*/
+#profile {
+  width: 37vw;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+#profile-text {
+  padding-right: 100px;
+  line-height: 3.3rem;
+}
+
+#profile h3 {
+  font-size: 0.9rem;
+}
+
+/*GENERAL*/
+.space {
+  height: 30vh;
+}
+
+.header-text {
+  font-size: 3rem;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+
+/* Get rid of the scrollbar */
+::-webkit-scrollbar {
+  width: 0px;
 }
