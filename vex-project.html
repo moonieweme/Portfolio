@@ -7,34 +7,613 @@
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <div class = "header">
-        <div class = "logo">
-            <a href="index.html" target="_blank">
-                <img src="Images/ak logo 2.png" alt="ak logo" style="cursor: pointer; border: none;">
-            </a>
+    <div class="nav-center">
+        <header class="nav-bar">
+          <a href="index.html#main">
+            <img src="logo (1).png" id="logo" alt="Logo" />
+          </a>
+          <a href="index.html#projects">
+            <img src="to Projects.png" alt="Navigate to Projects" />
+          </a>
+          <a href="index.htmla#profile">
+            <img src="User Profile Focus.png" alt="User Profile" />
+          </a>
+        </header>
+      </div>
+  
+      <div class="center-screen">
+        <div class="front-imgs">
+          <img src="IMG_7246.png" />
+          <img src="IMG_7247.png" />
         </div>
+      </div>
+  
+      <div class="center">
+        <h1 class="header-text">Autonomous Robot Cleanup</h1>
+      </div>
+  
+      <div class="center">
+        <div class="info">
+          <div class="description">
+            <h1 class="header-text">Description</h1>
+            <p>
+                This robot collects ball, places them on top of cubes and sorts the cubes into their respective corners
+            </p>
+          </div>
+          <div class="problem">
+            <h1 class="header-text">Problem</h1>
+            <p>
+                My dads warehouse needed to be organized, but only being one person, it was a time and energy consuming process. This is where I offered to create an autonomous robot to remove this hassle
 
-        <nav class = nav-items> 
-            <a href = "projects.html" target="_self">projects</a>
-            <a href = "about_me.html" target="_self">about me</a>
-            <a href = "contact.html" target="_self">contact</a>
-        </nav>
-    </div>
+            </p>
+          </div>
+          <div class="plan">
+            <h1 class="header-text">Plan/Solution</h1>
+            <h1 id="sub">Materials Used</h1>
+            <div class="flexr">
+                <div class="img-box">
+                    <div class= "yurp">
+                        <img src="IMG_6590.png"/>
+                        <p>Vex Elements</p>
+                    </div>
+                    <div class= "yurp">
+                        <img src="IMG_6590.png"/>
+                        <p>Vex Elements</p>
+                    </div>
+                    <div class= "yurp">
+                        <img src="IMG_6590.png"/>
+                        <p>Vex Elements</p>
+                    </div>
+                    <div class= "yurp">
+                        <img src="IMG_6590.png"/>
+                        <p>Vex Elements</p>
+                    </div>
+                </div>
+         
+            
+                <ul>
+                    <li>Vex Field</li>
+                    <li>Vex Elements
+                        <ul>
+                            <li>Cube</li>
+                            <li>Balls</li>
+                        </ul>
+                    </li>
+                    <li>Vex Starter Kit
+                        <ul>
+                            <li>Bars to construct</li>
+                            <li>Pins to connect bars</li>
+                            <li>Motors to allow for movement</li>
+                            <li>Axles to extend a motor's rotating power</li>
+                            <li>Gears/sprockets to change gear ratios (for speed or torque)</li>
+                            <li>Sensors to detect real-world objects</li>
+                            <li>Brain to control all the electronic components</li>
+                        </ul>
+                    </li>
+                    <li>Robot C to code the logic for the robot</li>
+                </ul>
+            
+         
+          </div>
+  
+          <div class="how">
+            <h1>How It Works</h1>
+            <div class="list">
+              <ol>
+                <li>First Path</li>
+                <ul>
+                <li>
+                  Place an object (e.g., your hand) 5 cm away from the distance
+                  sensor to open the keypad door.
+                </li>
+                <li>
+                  Once the keypad door is open, enter a 4-digit PIN and press the
+                  * symbol to submit it.
+                </li>
+                <li>
+                  If the PIN is entered incorrectly three times, the keypad door
+                  will automatically close and remain locked for 2 minutes before
+                  it can be reopened.
+                </li>
+                <li>
+                  After entering the correct PIN, the safe door will unlock. Use
+                  the magnet key to swing it open.
+                </li>
+                <li>Place or retrieve your valuables from the safe.</li>
+                <li>
+                  To secure the safe, close the safe door and press the # button
+                  to lock it. The keypad door will also close automatically.
+                </li>
+                
+            </ul>
+            <li>Second Path</li>
+            <ul><li>This process is repeated from path 1, but mirrored for the other side of the field</li></ul>
+              </ol>
+            </div>
+            <div class="center">
+              <img
+                
+                id="demonstration"
+                class="main-imgs"
+                src="IMG_6590.png"
+              >
+            </div>
+          </div>
+          <div class="build">
+            <h1>Building Process</h1>
+            <h2>Drivetrain</h2>
+            <ul>
+                <li>
+                5 omni wheels, four in a normal tank configuration, with the 5th perpendicular to the rest, in the middle of the drive train</li>
+                <ul><li>This allow the robot to move side to side without turning</li></ul>
+            </ul>    
+            <h2>Intake</h2>
+            <ul>
+              <li>
+                A tank tread with scoopers attached transitions the balls from the floor horizontally, to the vertical cage, to the horizontal ball rack.
+              </li>
+              <li>
+                The scoopers additionally have pins attached to the opposite end, so when reversing the intake motor, the pins can lift and furthermore drag cubes around.
+              </li>
+            </ul>
+            <h2>Track Switch*</h2>
+            <ul><li>Once ball track one is full, the track switch, switches the balls flow into track two</li></ul>
+            <h2>Ball Release*</h2>
+            <ul><li>Once the ball rack is full, the ball release allows the balls to freely fall onto the top of the cube</li></ul>
 
-    <h1>Vex IQ</h1>
-    <div>
-        <div class="vex-images">
-            <video autoplay muted></video>
-                <source src="Vex Project/IMG_6782.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <video autoplay muted>
-                <source src="Vex Project/IMG_6813.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+            <h1>Brain & Sensors</h1>
+            <h2>Brain</h2>
+            <ul><li>This allows code to control the motors and take inputs/output to the various sensors</li></ul>
+            <h2>Sensors</h2>
+            <p>Touch LED</p>
+            <ul>
+            
+                        <li>Once pressed, the program begins. The colors displayed on the sensor have their own meaning:
+                            <ul>
+                                <li>Yellow: Running intro</li>
+                                <li>Blue: Running blue condition</li>
+                                <li>Red: Running red condition</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <p>Front Bumper</p>
+<ul>
+    <li>Once this bumper is pressed down, the front of the robot must be pressed up against a wall</li>
+    <li>This is used in the code to stop moving forward, after intaking a pair of balls</li>
+</ul>
+<p>Back Bumper</p>
+<ul>
+    <li>Once this bumper is pressed down, the back of the robot must be pressed up against a cube</li>
+    <li>This is used in the code to stop the backwards movement of the robot, in order to ensure that the ball release works smoothly</li>
+</ul>
+<p>Color Sensor</p>
+<ul>
+    <li>This sensor determines the color of a cube when in its vicinity, in order to control the decision-making process of the robot (which corner to put a cube where)</li>
+</ul>
+            
+<h2>Mechanisms</h2>
+<p>Differential Gearbox</p>
+<ul>
+    <li>A differential gearbox allows one motor to control two different output shafts</li>
+    <li>When the ball Release mechanism reaches its (left or right) stopper, the shaft connected to Arm A stops turning, (it creates resistance that prevents its shaft from turning). When Arm A reaches its stopper, the differential responds by redirecting the power to the path of least resistance—Arm B—allowing it to move instead. Similarly, when Arm B hits its (LEFT OR RIGHT) stopper, its shaft stops, and the differential shifts the power back to Arm A.</li>
+    <li>This mechanism is commonly used in cars to support each wheel moving at different speeds (gif of differential in car)</li>
+</ul>
+
+  
+            <div class="coding">
+            <h1 class="coding-text">Code</h1>
+            <div class="card">
+              <div class="header">
+                <div class="top">
+                  <div class="circle">
+                    <span class="red circle2"></span>
+                  </div>
+                  <div class="circle">
+                    <span class="yellow circle2"></span>
+                  </div>
+                  <div class="circle">
+                    <span class="green circle2"></span>
+                  </div>
+                  <div class="title">
+                    <p id="title2">Keypad.ino</p>
+                  </div>
+                </div>
+              </div>
+              <div class="code-container">
+                <textarea class="area" id="code" name="code" readonly="">
+                  /* 
+  
+                  #pragma region VEXcode Generated Robot Configuration
+                  // Make sure all required headers are included.
+                  #include <stdio.h>
+                  #include <stdlib.h>
+                  #include <stdbool.h>
+                  #include <math.h>
+                  #include <string.h>
+                  
+                  
+                  #include "vex.h"
+                  
+                  using namespace vex;
+                  
+                  // Brain should be defined by default
+                  brain Brain;
+                  
+                  
+                  // START IQ MACROS
+                  #define waitUntil(condition)                                                   \
+                    do {                                                                         \
+                      wait(5, msec);                                                             \
+                    } while (!(condition))
+                  
+                  #define repeat(iterations)                                                     \
+                    for (int iterator = 0; iterator < iterations; iterator++)
+                  // END IQ MACROS
+                  
+                  
+                  // Robot configuration code.
+                  inertial BrainInertial = inertial();
+                  motor driveTrainMotorA = motor(PORT1, false);
+                  motor driveTrainMotorB = motor(PORT6, true);
+                  motor_group driveTrain = motor_group(driveTrainMotorA, driveTrainMotorB);
+                  
+                  motor intake = motor(PORT7, false);
+                  motor omni = motor(PORT3, false);
+                  motor release = motor(PORT4, false);
+                  colorsensor colorSensor = colorsensor(PORT5);
+                  bumper backBump = bumper(PORT9);
+                  colorsensor lineSensor = colorsensor(PORT8);
+                  touchled touchLED = touchled(PORT11);
+                  bumper frontBump = bumper(PORT12);
+                  
+                  #pragma endregion VEXcode Generated Robot Configuration
+                  
+                  //----------------------------------------------------------------------------
+                  //                                                                            
+                  //    Module:       main.cpp                                                  
+                  //    Author:       Austin Koola                                                 
+                  //    Created:      Aug 8th, 2024                                                   
+                  //    Description:                                                 
+                  //                                                                            
+                  //----------------------------------------------------------------------------
+                  
+                  // Include the IQ Library
+                  #include "iq_cpp.h"
+                  
+                  // Allows for easier use of the VEX Library
+                  using namespace vex;
+                  
+                  
+                  bool isBlue = false;
+                  bool isRed = false;
+                  
+                  
+                  void releaseBalls () {
+                    
+                  
+                    while (backBump.pressing() == false) {
+                      driveTrain.spin(reverse);
+                      
+                    }
+                    wait(500, msec);
+                    release.setVelocity(10, percent); 
+                    driveTrain.stop();
+                    release.spinFor(reverse, 220, degrees);
+                  
+                    // if (colorSensor.detects(red)) {
+                    //   isRed = true;
+                    //   touchLED.setColor(red_violet);
+                    // }
+                    // else {
+                    //   isBlue = true;
+                    //   touchLED.setColor(blue_green);
+                    // }
+                  
+                  
+                    wait(500, msec);
+                    release.setVelocity(100, percent); 
+                    driveTrain.spinFor(forward, 2, turns);
+                    release.spinFor(forward, 230, degrees);
+                    wait(500, msec);
+                    release.setVelocity(25, percent); 
+                    release.spinFor(reverse, 150, degrees);
+                  }
+                  
+                  void intakeBalls() { 
+                    intake.setVelocity(50, percent);
+                    
+                  
+                    while (frontBump.pressing() == false) {
+                      driveTrain.spin(forward);
+                      wait(500, msec);
+                      intake.spin(forward);
+                    }
+                    wait(400, msec);
+                    driveTrain.stop();
+                  
+                    wait(3000, msec);
+                    intake.stop();
+                  
+                  }
+                  
+                  void cubeDropOff (int pathNum) {
+                    //PATH 1
+                    if (pathNum == 1) {
+                      driveTrain.spinFor(reverse, 800, degrees);
+                      omni.spinFor(forward,400, degrees, false);
+                      driveTrainMotorB.spinFor(forward, 600, degrees);
+                  
+                      driveTrain.spinFor(forward, 2000, degrees, false);
+                      omni.spinFor(forward, 1300, degrees);
+                    
+                      wait(3000, msec);
+                      intake.spinFor(forward, 200, degrees);
+                  
+                      //RESETTING TO STARTING POS
+                      driveTrain.setVelocity(20, percent);
+                      omni.setVelocity(20, percent);
+                  
+                      intake.spinFor(forward, 200, degrees, false);
+                      driveTrain.spinFor(reverse, 800, degrees);
+                      omni.spinFor(reverse, 400, degrees);
+                      driveTrainMotorB.spinFor(reverse, 600, degrees);
+                      driveTrain.spinFor(reverse, 100, degrees);
+                  
+                      driveTrain.setVelocity(40, percent);
+                      omni.setVelocity(30, percent);
+                    }
+                    //PATH 2
+                    else if (pathNum == 2) {
+                      driveTrain.spinFor(reverse, 800, degrees);
+                      omni.spinFor(reverse,400, degrees, false);
+                      driveTrainMotorA.spinFor(forward, 600, degrees);
+                  
+                      driveTrain.spinFor(forward, 2000, degrees, false);
+                      omni.spinFor(reverse, 1300, degrees);
+                    
+                      wait(3000, msec);
+                      intake.spinFor(forward, 200, degrees, false);
+                  
+                      driveTrain.spinFor(reverse, 500, degrees);
+                  
+                    }
+                    //PATH 3
+                    else if (pathNum == 3) {
+                      driveTrain.spinFor(reverse, 800, degrees);
+                      omni.spinFor(reverse,400, degrees, false);
+                      driveTrainMotorA.spinFor(forward, 600, degrees);
+                  
+                      driveTrain.spinFor(forward, 2000, degrees, false);
+                      omni.spinFor(reverse, 1300, degrees);
+                    
+                      wait(3000, msec);
+                      intake.spinFor(forward, 200, degrees);
+                      driveTrain.spinFor(reverse, 500, degrees, false);
+                    }
+                    //PATH 4
+                    else if (pathNum == 4) {
+                      driveTrain.spinFor(reverse, 800, degrees);
+                  
+                      omni.spinFor(forward, 600, degrees);
+                      driveTrainMotorB.spinFor(forward, 600, degrees, false);
+                      driveTrainMotorA.spinFor(reverse, 600, degrees);
+                      omni.spinFor(forward, 600, degrees);
+                  
+                      driveTrain.spinFor(forward, 700, degrees, false);
+                      intake.spinFor(forward, 300, degrees);
+                    }
+                  
+                  }
+                  
+                  void cubePickUpR (){
+                    // Turn around so the intake is facing the cube
+                    omni.spinFor(reverse, 600,degrees); 
+                   
+                    intake.spinToPosition(3750, degrees); // 3 revolutions
+                  
+                    driveTrainMotorA.spinFor(reverse, 600, degrees, false);
+                    driveTrainMotorB.spinFor(forward, 600, degrees, false);
+                    wait(2700, msec);
+                    omni.spin(reverse);
+                    wait(2500, msec);
+                    omni.stop();
+                  
+                    //Approach and lift the cube off the ground
+                    driveTrain.setVelocity(30, percent);
+                    while(frontBump.pressing() == false){
+                      driveTrain.spin(forward);
+                    }
+                    driveTrain.stop();
+                    intake.spinFor(reverse, 200, degrees);
+                  
+                  
+                    
+                  }
+                  void cubePickUpL (){
+                    // Turn around so the intake is facing the cube
+                    omni.spinFor(forward, 600,degrees); 
+                   
+                    intake.spinToPosition(6350, degrees); // 5 revolutions + more
+                    
+                  
+                    driveTrainMotorA.spinFor(forward, 600, degrees, false);
+                    driveTrainMotorB.spinFor(reverse, 600, degrees, false);
+                    wait(2700, msec);
+                    omni.spin(forward);
+                    wait(2500, msec);
+                    omni.stop();
+                    omni.spinFor(reverse, 50, degrees);
+                  
+                    //Approach and lift the cube off the ground
+                    driveTrain.setVelocity(30, percent);
+                    while(frontBump.pressing() == false){
+                      driveTrain.spin(forward);
+                    }
+                    driveTrain.stop();
+                    intake.spinFor(reverse, 200, degrees);
+                  
+                  
+                    
+                  }
+                  
+                  
+                  void otherStart () {
+                    touchLED.setColor(white);
+                  
+                    wait(1,seconds);
+                    
+                    // Approach first set of balls
+                    driveTrain.spinFor(forward, 1600, degrees, false);
+                    omni.spinFor(forward, 700, degrees, false);
+                    wait(6500, msec);
+                    
+                    // Function to intake balls
+                    intakeBalls();
+                    
+                    // Switch to the second track
+                    release.spinFor(forward, 105, degrees, false);
+                    // Drive to next set of balls
+                    driveTrain.spinFor(reverse, 550, degrees, true);
+                    omni.spinFor(reverse, 550, degrees);
+                    //driveTrainMotorA.spinFor(forward, 100, degrees, true);
+                    
+                    intakeBalls();
+                  
+                    // Approach the cube with the backside of the robot
+                    driveTrain.spinFor(reverse, 900, degrees, true);
+                    driveTrainMotorA.spinFor(forward, 600, degrees, false);
+                    driveTrainMotorB.spinFor(reverse, 600, degrees, false);
+                    wait(2000, msec);
+                    omni.setVelocity(35, percent);
+                    omni.spin(reverse);
+                    wait(6500, msec);
+                    omni.stop();
+                    
+                  
+                    
+                  
+                    // Function to release the balls onto the cube as well as check the color of the cube
+                    releaseBalls();
+                    touchLED.setColor(blue_green);
+                    
+                    cubePickUpL();
+                  
+                    // if (isBlue) {
+                    //   cubeDropOff(3);
+                    //   isBlue = false;
+                    // }
+                  
+                    // else if (isRed) {
+                    //   cubeDropOff(4);
+                    //   isRed = false;
+                    // }
+                    
+                    cubeDropOff(3);
+                  
+                  }
+                  
+                  
+                  void start () {
+                    touchLED.setColor(white);
+                  
+                    wait(5,seconds);
+                    
+                    // Approach first set of balls
+                    driveTrain.spinFor(forward, 1600, degrees, false);
+                    omni.spinFor(reverse, 725, degrees, false);
+                    wait(6500, msec);
+                    
+                    // Function to intake balls
+                    intakeBalls();
+                    
+                    // Switch to the second track
+                    release.spinFor(forward, 105, degrees, false);
+                    // Drive to next set of balls
+                    driveTrain.spinFor(reverse, 550, degrees, true);
+                    omni.spinFor(forward, 550, degrees);
+                    //driveTrainMotorA.spinFor(forward, 100, degrees, true);
+                    
+                    intakeBalls();
+                  
+                    // Approach the cube with the backside of the robot
+                    driveTrain.spinFor(reverse, 900, degrees, true);
+                    driveTrainMotorA.spinFor(reverse, 600, degrees, false);
+                    driveTrainMotorB.spinFor(forward, 600, degrees, false);
+                    wait(2000, msec);
+                    omni.setVelocity(35, percent);
+                    omni.spin(forward);
+                    wait(6500, msec);
+                    omni.stop();
+                  
+                    // Function to release the balls onto the cube as well as check the color of the cube
+                    releaseBalls();
+                    touchLED.setColor(red);
+                  
+                    cubePickUpR();
+                  
+                    // if (isBlue) {
+                    //   cubeDropOff(1);
+                    //   isBlue = false;
+                    // }
+                    // else if (isRed) {
+                    //   cubeDropOff(2);
+                    //   isRed = false;
+                    // }
+                    
+                  
+                    cubeDropOff(1);
+                    otherStart();
+                  }
+                  
+                  
+                  
+                  
+                  
+                  // Calibrate the robot 
+                  void calibrate () {
+                    touchLED.setColor(red_orange);
+                    BrainInertial.calibrate();
+                    BrainInertial.setHeading(0, degrees);
+                  
+                    intake.setPosition(0, degrees);
+                  
+                    driveTrain.setStopping(coast);
+                    omni.setStopping(coast);
+                    release.setStopping(hold);
+                    driveTrain.setVelocity(40, percent);
+                    omni.setVelocity(30, percent);
+                    intake.setMaxTorque(100, percent);
+                  
+                  
+                    driveTrain.spinFor(reverse, 20, degrees, false);
+                    
+                    // Start the movement
+                    touchLED.pressed(start);
+                  }
+                  
+                  
+                  int main() {
+                    touchLED.setColor(red_orange);
+                    touchLED.pressed(calibrate);
+                  }
+                  
+                  
+                  </textarea
+                >
+              </div>
+            </div>
+          </div>
+          <h1 class="header-text">Results<h1>
+          <h2>I was able to create a prototype of a autonomous robot, that could mimic the tasks a robot needed to organize a warehouse could do.</h2>
+          <div></div>
+          <h1 class="header-text">Challenges/Lessons Learned</h1>
+          
+          <h2>I only had 5 motors so i had to control 2 mechanisms with one motor</h2>
+          <ul><li>I learned how to use the differential in order to control 2 different output shafts using one motor </li></ul>
+  
         </div>
-    </div>
-
-
+      </div>
 </body>
 </html>

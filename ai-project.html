@@ -7,276 +7,515 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="header">
-      <div class="logo">
-        <a href="index.html" target="_self">
-          <img
-            src="ak logo 2.png"
-            alt="ak logo"
-            style="cursor: pointer; border: none"
-          />
+    <div class="nav-center">
+      <header class="nav-bar">
+        <a href="index.html#main">
+          <img src="logo (1).png" id="logo" alt="Logo" />
         </a>
-      </div>
-      <nav class="nav-items">
-        <a href="projects.html" target="_self">projects</a>
-        <a href="about_me.html" target="_self">about me</a>
-        <a href="contact.html" target="_self">contact</a>
-      </nav>
+        <a href="index.html#projects">
+          <img src="to Projects.png" alt="Navigate to Projects" />
+        </a>
+        <a href="index.html#profile">
+          <img src="User Profile Focus.png" alt="User Profile" />
+        </a>
+      </header>
     </div>
 
-    <h1>Predicting Student's Exam Score</h1>
+    <div class="center-screen">
+      <div class="front-imgs">
+        <h1 class="header-text">Neural Network Gif</h1>
+      </div>
+    </div>
 
-    <form id="predictionForm">
-      <label for="hours_studied">Hours Studied (Per Week):</label>
-      <input
-        type="number"
-        id="hours_studied"
-        name="hours_studied"
-        required
-        min="0"
-        max="168"
-      /><br /><br />
+    <div class="center">
+      <h1 class="header-text">Exam Score Prediction</h1>
+    </div>
 
-      <label for="attendance">Attendance (% Of Class Attended):</label>
-      <input
-        type="number"
-        id="attendance"
-        name="attendance"
-        required
-        min="0"
-        max="100"
-      />
-      <br /><br />
+    <div class="center">
+      <div class="info">
+        <div class="description">
+          <h1 class="header-text">Description</h1>
+          <p>
+            This neural network predicts a students exam score, based on features such as their sleep hours, previous exam scores, peer influence, and more. 
 
-      <label for="parental_involvement">Parental Involvement:</label>
-      <select id="parental_involvement" name="parental_involvement" required>
-        <option value="1">Low</option>
-        <option value="2">Moderate</option>
-        <option value="3">High</option>
-      </select>
-      <br /><br />
+          </p>
+        </div>
+        <div class="problem">
+          <h1 class="header-text">Problem</h1>
+          <p>
+            Me and my friends wanted to know what exam score would be achievable based on certain factors about us
 
-      <label for="access_to_resources">Access to Resources (1-5):</label>
-      <select id="access_to_resources" name="access_to_resources" required>
-        <option value="1">Low</option>
-        <option value="2">Moderate</option>
-        <option value="3">High</option>
-      </select>
-      <br /><br />
+          </p>
+        </div>
+        <div class="plan">
+          <h1 class="header-text">Plan/Solution</h1>
+          <h1 id="sub">Materials Used</h1>
+          <div class="flexr">
+              <div class="img-box">
+                  <div class= "yurp">
+                      <img src="IMG_6590.png"/>
+                      <p>Vex Elements</p>
+                  </div>
+                  <div class= "yurp">
+                      <img src="IMG_6590.png"/>
+                      <p>Vex Elements</p>
+                  </div>
+                  <div class= "yurp">
+                      <img src="IMG_6590.png"/>
+                      <p>Vex Elements</p>
+                  </div>
+                  <div class= "yurp">
+                      <img src="IMG_6590.png"/>
+                      <p>Vex Elements</p>
+                  </div>
+              </div>
+       
+              <ul>
+                <li>Extensions</li>
+                <ul>
+                    <li>Pandas</li>
+                    <li>Tensorflow</li>
+                    <ul>
+                        <li>keras</li>
+                        <li>Dense layers</li>
+                    </ul>
+                    <li>Matplot lib</li>
+                    <li>Sklearn test train split</li>
+                </ul>
+                <li>CSV Data of student features and final exam scores to train and validate</li>
+                <li>Visual Studio Code for IDE</li>
+              </ul>            
+       
+        </div>
 
-      <label for="extracurricular_activities"
-        >Extracurricular Activities:</label
-      >
-      <select
-        id="extracurricular_activities"
-        name="extracurricular_activities"
-        required
-      >
-        <option value="0">No</option>
-        <option value="1">Yes</option>
-      </select>
-      <br /><br />
+        <div class="how">
+          <h1>How It Works</h1>
+          <ul>
+            <li>The model learns based off of these features: and the prediction target is the final exam score</li>
+            <li>It is fitted upon training data, split from the student performance</li>
+            <li>The model then predicts an exam score based on what it has learned</li>
+            <li>It then compares its predictions to the other split of the data: the validation data</li>
+            <li>After this, the model continues to adjust its weights in hope of reducing the loss to its minimum</li>
+        </ul>
+        
+        </div>
+        <div class="build">
+          <h1>Building Process</h1>
+          <p>
+          Include final graph screen shots (ON MACBOOK)
+After each iteration of code I had, using the graph of validation training loss, as well as the minimum training loss at the end, to alter my code
+This process continued until i  reached a manageable error of 0.47 (current model)</p>
 
-      <label for="sleep_hours">Sleep (Hours Per Night):</label>
-      <input
-        type="number"
-        id="sleep_hours"
-        name="sleep_hours"
-        required
-        min="0"
-        max="24"
-      />
-      <br /><br />
 
-      <label for="previous_scores">Previous Exam Scores (0-100):</label>
-      <input
-        type="number"
-        id="previous_scores"
-        name="previous_scores"
-        min="0"
-        max="100"
-        required
-      />
-      <br /><br />
+          <div class="coding">
+          <h1 class="coding-text">Code</h1>
+          <div class="card">
+            <div class="header">
+              <div class="top">
+                <div class="circle">
+                  <span class="red circle2"></span>
+                </div>
+                <div class="circle">
+                  <span class="yellow circle2"></span>
+                </div>
+                <div class="circle">
+                  <span class="green circle2"></span>
+                </div>
+                <div class="title">
+                  <p id="title2">Keypad.ino</p>
+                </div>
+              </div>
+            </div>
+            <div class="code-container">
+              <textarea class="area" id="code" name="code" readonly="">
+                /* 
 
-      <label for="motivation_level">Motivation Level:</label>
-      <select id="motivation_level" name="motivation_level" required>
-        <option value="1">Low</option>
-        <option value="2">Moderate</option>
-        <option value="3">High</option>
-      </select>
-      <br /><br />
+                #pragma region VEXcode Generated Robot Configuration
+                // Make sure all required headers are included.
+                #include <stdio.h>
+                #include <stdlib.h>
+                #include <stdbool.h>
+                #include <math.h>
+                #include <string.h>
+                
+                
+                #include "vex.h"
+                
+                using namespace vex;
+                
+                // Brain should be defined by default
+                brain Brain;
+                
+                
+                // START IQ MACROS
+                #define waitUntil(condition)                                                   \
+                  do {                                                                         \
+                    wait(5, msec);                                                             \
+                  } while (!(condition))
+                
+                #define repeat(iterations)                                                     \
+                  for (int iterator = 0; iterator < iterations; iterator++)
+                // END IQ MACROS
+                
+                
+                // Robot configuration code.
+                inertial BrainInertial = inertial();
+                motor driveTrainMotorA = motor(PORT1, false);
+                motor driveTrainMotorB = motor(PORT6, true);
+                motor_group driveTrain = motor_group(driveTrainMotorA, driveTrainMotorB);
+                
+                motor intake = motor(PORT7, false);
+                motor omni = motor(PORT3, false);
+                motor release = motor(PORT4, false);
+                colorsensor colorSensor = colorsensor(PORT5);
+                bumper backBump = bumper(PORT9);
+                colorsensor lineSensor = colorsensor(PORT8);
+                touchled touchLED = touchled(PORT11);
+                bumper frontBump = bumper(PORT12);
+                
+                #pragma endregion VEXcode Generated Robot Configuration
+                
+                //----------------------------------------------------------------------------
+                //                                                                            
+                //    Module:       main.cpp                                                  
+                //    Author:       Austin Koola                                                 
+                //    Created:      Aug 8th, 2024                                                   
+                //    Description:                                                 
+                //                                                                            
+                //----------------------------------------------------------------------------
+                
+                // Include the IQ Library
+                #include "iq_cpp.h"
+                
+                // Allows for easier use of the VEX Library
+                using namespace vex;
+                
+                
+                bool isBlue = false;
+                bool isRed = false;
+                
+                
+                void releaseBalls () {
+                  
+                
+                  while (backBump.pressing() == false) {
+                    driveTrain.spin(reverse);
+                    
+                  }
+                  wait(500, msec);
+                  release.setVelocity(10, percent); 
+                  driveTrain.stop();
+                  release.spinFor(reverse, 220, degrees);
+                
+                  // if (colorSensor.detects(red)) {
+                  //   isRed = true;
+                  //   touchLED.setColor(red_violet);
+                  // }
+                  // else {
+                  //   isBlue = true;
+                  //   touchLED.setColor(blue_green);
+                  // }
+                
+                
+                  wait(500, msec);
+                  release.setVelocity(100, percent); 
+                  driveTrain.spinFor(forward, 2, turns);
+                  release.spinFor(forward, 230, degrees);
+                  wait(500, msec);
+                  release.setVelocity(25, percent); 
+                  release.spinFor(reverse, 150, degrees);
+                }
+                
+                void intakeBalls() { 
+                  intake.setVelocity(50, percent);
+                  
+                
+                  while (frontBump.pressing() == false) {
+                    driveTrain.spin(forward);
+                    wait(500, msec);
+                    intake.spin(forward);
+                  }
+                  wait(400, msec);
+                  driveTrain.stop();
+                
+                  wait(3000, msec);
+                  intake.stop();
+                
+                }
+                
+                void cubeDropOff (int pathNum) {
+                  //PATH 1
+                  if (pathNum == 1) {
+                    driveTrain.spinFor(reverse, 800, degrees);
+                    omni.spinFor(forward,400, degrees, false);
+                    driveTrainMotorB.spinFor(forward, 600, degrees);
+                
+                    driveTrain.spinFor(forward, 2000, degrees, false);
+                    omni.spinFor(forward, 1300, degrees);
+                  
+                    wait(3000, msec);
+                    intake.spinFor(forward, 200, degrees);
+                
+                    //RESETTING TO STARTING POS
+                    driveTrain.setVelocity(20, percent);
+                    omni.setVelocity(20, percent);
+                
+                    intake.spinFor(forward, 200, degrees, false);
+                    driveTrain.spinFor(reverse, 800, degrees);
+                    omni.spinFor(reverse, 400, degrees);
+                    driveTrainMotorB.spinFor(reverse, 600, degrees);
+                    driveTrain.spinFor(reverse, 100, degrees);
+                
+                    driveTrain.setVelocity(40, percent);
+                    omni.setVelocity(30, percent);
+                  }
+                  //PATH 2
+                  else if (pathNum == 2) {
+                    driveTrain.spinFor(reverse, 800, degrees);
+                    omni.spinFor(reverse,400, degrees, false);
+                    driveTrainMotorA.spinFor(forward, 600, degrees);
+                
+                    driveTrain.spinFor(forward, 2000, degrees, false);
+                    omni.spinFor(reverse, 1300, degrees);
+                  
+                    wait(3000, msec);
+                    intake.spinFor(forward, 200, degrees, false);
+                
+                    driveTrain.spinFor(reverse, 500, degrees);
+                
+                  }
+                  //PATH 3
+                  else if (pathNum == 3) {
+                    driveTrain.spinFor(reverse, 800, degrees);
+                    omni.spinFor(reverse,400, degrees, false);
+                    driveTrainMotorA.spinFor(forward, 600, degrees);
+                
+                    driveTrain.spinFor(forward, 2000, degrees, false);
+                    omni.spinFor(reverse, 1300, degrees);
+                  
+                    wait(3000, msec);
+                    intake.spinFor(forward, 200, degrees);
+                    driveTrain.spinFor(reverse, 500, degrees, false);
+                  }
+                  //PATH 4
+                  else if (pathNum == 4) {
+                    driveTrain.spinFor(reverse, 800, degrees);
+                
+                    omni.spinFor(forward, 600, degrees);
+                    driveTrainMotorB.spinFor(forward, 600, degrees, false);
+                    driveTrainMotorA.spinFor(reverse, 600, degrees);
+                    omni.spinFor(forward, 600, degrees);
+                
+                    driveTrain.spinFor(forward, 700, degrees, false);
+                    intake.spinFor(forward, 300, degrees);
+                  }
+                
+                }
+                
+                void cubePickUpR (){
+                  // Turn around so the intake is facing the cube
+                  omni.spinFor(reverse, 600,degrees); 
+                 
+                  intake.spinToPosition(3750, degrees); // 3 revolutions
+                
+                  driveTrainMotorA.spinFor(reverse, 600, degrees, false);
+                  driveTrainMotorB.spinFor(forward, 600, degrees, false);
+                  wait(2700, msec);
+                  omni.spin(reverse);
+                  wait(2500, msec);
+                  omni.stop();
+                
+                  //Approach and lift the cube off the ground
+                  driveTrain.setVelocity(30, percent);
+                  while(frontBump.pressing() == false){
+                    driveTrain.spin(forward);
+                  }
+                  driveTrain.stop();
+                  intake.spinFor(reverse, 200, degrees);
+                
+                
+                  
+                }
+                void cubePickUpL (){
+                  // Turn around so the intake is facing the cube
+                  omni.spinFor(forward, 600,degrees); 
+                 
+                  intake.spinToPosition(6350, degrees); // 5 revolutions + more
+                  
+                
+                  driveTrainMotorA.spinFor(forward, 600, degrees, false);
+                  driveTrainMotorB.spinFor(reverse, 600, degrees, false);
+                  wait(2700, msec);
+                  omni.spin(forward);
+                  wait(2500, msec);
+                  omni.stop();
+                  omni.spinFor(reverse, 50, degrees);
+                
+                  //Approach and lift the cube off the ground
+                  driveTrain.setVelocity(30, percent);
+                  while(frontBump.pressing() == false){
+                    driveTrain.spin(forward);
+                  }
+                  driveTrain.stop();
+                  intake.spinFor(reverse, 200, degrees);
+                
+                
+                  
+                }
+                
+                
+                void otherStart () {
+                  touchLED.setColor(white);
+                
+                  wait(1,seconds);
+                  
+                  // Approach first set of balls
+                  driveTrain.spinFor(forward, 1600, degrees, false);
+                  omni.spinFor(forward, 700, degrees, false);
+                  wait(6500, msec);
+                  
+                  // Function to intake balls
+                  intakeBalls();
+                  
+                  // Switch to the second track
+                  release.spinFor(forward, 105, degrees, false);
+                  // Drive to next set of balls
+                  driveTrain.spinFor(reverse, 550, degrees, true);
+                  omni.spinFor(reverse, 550, degrees);
+                  //driveTrainMotorA.spinFor(forward, 100, degrees, true);
+                  
+                  intakeBalls();
+                
+                  // Approach the cube with the backside of the robot
+                  driveTrain.spinFor(reverse, 900, degrees, true);
+                  driveTrainMotorA.spinFor(forward, 600, degrees, false);
+                  driveTrainMotorB.spinFor(reverse, 600, degrees, false);
+                  wait(2000, msec);
+                  omni.setVelocity(35, percent);
+                  omni.spin(reverse);
+                  wait(6500, msec);
+                  omni.stop();
+                  
+                
+                  
+                
+                  // Function to release the balls onto the cube as well as check the color of the cube
+                  releaseBalls();
+                  touchLED.setColor(blue_green);
+                  
+                  cubePickUpL();
+                
+                  // if (isBlue) {
+                  //   cubeDropOff(3);
+                  //   isBlue = false;
+                  // }
+                
+                  // else if (isRed) {
+                  //   cubeDropOff(4);
+                  //   isRed = false;
+                  // }
+                  
+                  cubeDropOff(3);
+                
+                }
+                
+                
+                void start () {
+                  touchLED.setColor(white);
+                
+                  wait(5,seconds);
+                  
+                  // Approach first set of balls
+                  driveTrain.spinFor(forward, 1600, degrees, false);
+                  omni.spinFor(reverse, 725, degrees, false);
+                  wait(6500, msec);
+                  
+                  // Function to intake balls
+                  intakeBalls();
+                  
+                  // Switch to the second track
+                  release.spinFor(forward, 105, degrees, false);
+                  // Drive to next set of balls
+                  driveTrain.spinFor(reverse, 550, degrees, true);
+                  omni.spinFor(forward, 550, degrees);
+                  //driveTrainMotorA.spinFor(forward, 100, degrees, true);
+                  
+                  intakeBalls();
+                
+                  // Approach the cube with the backside of the robot
+                  driveTrain.spinFor(reverse, 900, degrees, true);
+                  driveTrainMotorA.spinFor(reverse, 600, degrees, false);
+                  driveTrainMotorB.spinFor(forward, 600, degrees, false);
+                  wait(2000, msec);
+                  omni.setVelocity(35, percent);
+                  omni.spin(forward);
+                  wait(6500, msec);
+                  omni.stop();
+                
+                  // Function to release the balls onto the cube as well as check the color of the cube
+                  releaseBalls();
+                  touchLED.setColor(red);
+                
+                  cubePickUpR();
+                
+                  // if (isBlue) {
+                  //   cubeDropOff(1);
+                  //   isBlue = false;
+                  // }
+                  // else if (isRed) {
+                  //   cubeDropOff(2);
+                  //   isRed = false;
+                  // }
+                  
+                
+                  cubeDropOff(1);
+                  otherStart();
+                }
+                
+                
+                
+                
+                
+                // Calibrate the robot 
+                void calibrate () {
+                  touchLED.setColor(red_orange);
+                  BrainInertial.calibrate();
+                  BrainInertial.setHeading(0, degrees);
+                
+                  intake.setPosition(0, degrees);
+                
+                  driveTrain.setStopping(coast);
+                  omni.setStopping(coast);
+                  release.setStopping(hold);
+                  driveTrain.setVelocity(40, percent);
+                  omni.setVelocity(30, percent);
+                  intake.setMaxTorque(100, percent);
+                
+                
+                  driveTrain.spinFor(reverse, 20, degrees, false);
+                  
+                  // Start the movement
+                  touchLED.pressed(start);
+                }
+                
+                
+                int main() {
+                  touchLED.setColor(red_orange);
+                  touchLED.pressed(calibrate);
+                }
+                
+                
+                </textarea
+              >
+            </div>
+          </div>
+        </div>
+        <h1 class="header-text">Results<h1>
+        <h2>I was able to give a decent prediction on my final exam score, based on the given factors.</h2>
+        <div></div>
+        <h1 class="header-text">Challenges/Lessons Learned</h1>
+        
 
-      <label for="internet_access">Internet Access:</label>
-      <select id="internet_access" name="internet_access" required>
-        <option value="0">No</option>
-        <option value="1">Yes</option>
-      </select>
-      <br /><br />
-
-      <label for="tutoring_sessions"
-        >Tutoring Sessions (Sessions Attended Per Month):</label
-      >
-      <input
-        type="number"
-        id="tutoring_sessions"
-        name="tutoring_sessions"
-        required
-      />
-      <br /><br />
-
-      <label for="family_income">Family Income:</label>
-      <select id="family_income" name="family_income" required>
-        <option value="1">Low</option>
-        <option value="2">Moderate</option>
-        <option value="3">High</option>
-      </select>
-      <br /><br />
-
-      <label for="teacher_quality">Teacher Quality:</label>
-      <select id="motivation_level" name="motivation_level" required>
-        <option value="1">Low</option>
-        <option value="2">Moderate</option>
-        <option value="3">High</option>
-      </select>
-      <br /><br />
-
-      <label for="school_type">School Type:</label>
-      <select id="school_type" name="school_type" required>
-        <option value="0">Public</option>
-        <option value="1">Private</option>
-      </select>
-      <br /><br />
-
-      <label for="peer_influence">Peer Influence:</label>
-      <select id="peer_influence" name="peer_influence" required>
-        <option value="0">Negative</option>
-        <option value="1">Neutral</option>
-        <option value="2">Positive</option>
-      </select>
-      <br /><br />
-
-      <label for="physical_activity">Physical Activity (Hours Per Week):</label>
-      <input
-        type="number"
-        id="physical_activity"
-        name="physical_activity"
-        min="0"
-        max=""
-        required
-      />
-      <br /><br />
-
-      <label for="learning_disabilities">Learning Disabilities:</label>
-      <select id="learning_disabilities" name="learning_disabilities" required>
-        <option value="0">No</option>
-        <option value="1">Yes</option>
-      </select>
-      <br /><br />
-
-      <label for="parental_education_level">Parental Education Level:</label>
-      <select
-        id="parental_education_level"
-        name="parental_education_level"
-        required
-      >
-        <option value="1">Highschool</option>
-        <option value="2">College</option>
-        <option value="3">Postgraduate</option>
-      </select>
-      <br /><br />
-
-      <label for="distance_from_home">Distance from Home:</label>
-      <select id="distance_from_home" name="distance_from_home" required>
-        <option value="1">Near</option>
-        <option value="2">Moderate</option>
-        <option value="3">Far</option>
-      </select>
-      <br /><br />
-
-      <label for="gender">Gender:</label>
-      <select id="gender" name="gender" required>
-        <option value="0">Male</option>
-        <option value="1">Female</option>
-      </select>
-      <br /><br />
-
-      <button type="submit">Predict Score</button>
-    </form>
-
-    <h2 id="predictionResult"></h2>
-
-    <script>
-      document
-        .getElementById("predictionForm")
-        .addEventListener("submit", async function (e) {
-          e.preventDefault(); // Prevent the default form submission
-
-          // Gather form data
-          const data = {
-            hours_studied: document.getElementById("hours_studied").value,
-            attendance: document.getElementById("attendance").value,
-            parental_involvement: document.getElementById(
-              "parental_involvement"
-            ).value,
-            access_to_resources: document.getElementById("access_to_resources")
-              .value,
-            extracurricular_activities: document.getElementById(
-              "extracurricular_activities"
-            ).value,
-            sleep_hours: document.getElementById("sleep_hours").value,
-            previous_scores: document.getElementById("previous_scores").value,
-            motivation_level: document.getElementById("motivation_level").value,
-            internet_access: document.getElementById("internet_access").value,
-            tutoring_sessions:
-              document.getElementById("tutoring_sessions").value,
-            family_income: document.getElementById("family_income").value,
-            teacher_quality: document.getElementById("teacher_quality").value,
-            school_type: document.getElementById("school_type").value,
-            peer_influence: document.getElementById("peer_influence").value,
-            physical_activity:
-              document.getElementById("physical_activity").value,
-            learning_disabilities: document.getElementById(
-              "learning_disabilities"
-            ).value,
-            parental_education_level: document.getElementById(
-              "parental_education_level"
-            ).value,
-            distance_from_home:
-              document.getElementById("distance_from_home").value,
-            gender: document.getElementById("gender").value,
-          };
-
-          console.log(data); // Add this line to check the form data
-
-          try {
-            // Send the data to the API
-            const response = await fetch(
-              "https://api-qyoc.onrender.com/predict",
-              {
-                method: "POST",
-                headers: {
-                  "Content-Type": "application/json",
-                },
-                body: JSON.stringify(data),
-              }
-            );
-
-            if (!response.ok) {
-              throw new Error("Network response was not ok");
-            }
-
-            // Parse the JSON response
-
-            const result = await response.json();
-            document.getElementById("predictionResult").textContent =
-              "Predicted Exam Score: " + result.prediction;
-          } catch (error) {
-            console.error("Error:", error);
-            document.getElementById("predictionResult").textContent =
-              "An error occurred while predicting.";
-          }
-        });
-    </script>
-  </body>
+      </div>
+    </div>  </body>
 </html>

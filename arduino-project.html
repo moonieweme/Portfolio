@@ -1,71 +1,458 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Arduino Project</title>
-    <link rel="stylesheet" href="style.css"/>
-</head>
-<body>
-    <div class="header">
-        <div class="logo">
-            <a href="index.html" target="_blank">
-                <img src="Images/ak logo 2.png" alt="ak logo" style="cursor: pointer; border: none;">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="nav-center">
+      <header class="nav-bar">
+        <a href="index.html#main">
+          <img src="logo (1).png" id="logo" alt="Logo" />
+        </a>
+        <a href="index.html#projects">
+          <img src="to Projects.png" alt="Navigate to Projects" />
+        </a>
+        <a href="index.html#profile">
+          <img src="User Profile Focus.png" alt="User Profile" />
+        </a>
+      </header>
+    </div>
+
+    <div class="center-screen">
+      <div class="front-imgs">
+        <img src="IMG_7248.png" />
+        <img src="IMG_7249.png" />
+      </div>
+    </div>
+
+    <div class="center">
+      <h1 class="header-text">Motion-Sensor Safe</h1>
+    </div>
+
+    <div class="center">
+      <div class="info">
+        <div class="description">
+          <h1 class="header-text">Description</h1>
+          <p>
+            This Arduino UNO-controlled safe opens after a hand is waved around
+            the keypad, in which it opens a door revealing the keypad. Once the
+            correct PIN is entered access to the safe door is revealed.
+          </p>
+        </div>
+        <div class="problem">
+          <h1 class="header-text">Problem</h1>
+          <p>
+            I needed a safe that was discrete and didn't scream that it was a
+            safe. My siblings often walk in my room looking for snacks to steal
+            so I had to find a way to prevent them from doing so.
+          </p>
+        </div>
+        <div class="plan">
+          <h1 class="header-text">Plan/Solution</h1>
+          <h1 id="sub">Materials Used</h1>
+          <p>
+            Arduino UNO, various wires, Bread board, 2 servo motors, Distance
+            sensor, 4x4 Keypad
+          </p>
+          <div class="centerr">
+            <img
+              class="main-imgs margin-bottom margin-top"
+              src="IMG_6590.png"
+            />
+          </div>
+        </div>
+
+        <div class="how">
+          <h1>How It Works</h1>
+          <div class="list">
+            <ol>
+              <li>
+                Place an object (e.g., your hand) 5 cm away from the distance
+                sensor to open the keypad door.
+              </li>
+              <li>
+                Once the keypad door is open, enter a 4-digit PIN and press the
+                * symbol to submit it.
+              </li>
+              <li>
+                If the PIN is entered incorrectly three times, the keypad door
+                will automatically close and remain locked for 2 minutes before
+                it can be reopened.
+              </li>
+              <li>
+                After entering the correct PIN, the safe door will unlock. Use
+                the magnet key to swing it open.
+              </li>
+              <li>Place or retrieve your valuables from the safe.</li>
+              <li>
+                To secure the safe, close the safe door and press the # button
+                to lock it. The keypad door will also close automatically.
+              </li>
+            </ol>
+          </div>
+          <div class="center">
+            <video
+              controls
+              loop
+              muted
+              id="demonstration"
+              class="main-imgs"
+              src="Safe Demonstration.mp4"
+              type="video/mp4"
+            ></video>
+          </div>
+        </div>
+        <div class="build">
+          <h1>Building Process</h1>
+          <h2>Body Construction</h2>
+          <ul>
+            <li>
+              I constructed a rectangular prism using hardboard to ensure a
+              sturdy but lightweight construction and double layered corrugated
+              cardboard triangles to support the overall structure
+            </li>
+            <li>
+              I cut out squares from the hardboard for the safe door and keypad
+              door
+            </li>
+            <li>
+              All of these components were attached together with hot glue
+            </li>
+          </ul>
+          <h2>Electronics</h2>
+          <ul>
+            <li>
+              Using the Arduino UNO as the microcontroller base, I could control
+              multiple sensors and apply logic to my circuit
+            </li>
+            <li>
+              I used a bread board to organize the separate  I/O pins, ground
+              pins and 5V pins. 
+            </li>
+            <li>
+              I connected 2 servo motors for the keypad door and safe door to
+              pins  on the arduino, respectively, as well as their ground and
+              power pins to the breadboard
+            </li>
+            <li>
+              The distance sensor had its echo pin connected to # and trigger
+              pin connected to # on the Arduino. The VCC and Ground pins are
+              connected to the breadboard once again
+            </li>
+            <li>
+              The keypads row pins and column pins are also connected to the
+              arduino I/O pins (note that there are no VCC or ground pins as
+              this device only picks up inputs, and does not give any output)
+            </li>
+            <li>
+              With all my devices connected, I could then program the logic for
+              the safe
+            </li>
+          </ul>
+          <div class="center">
+            <a
+              href="https://www.tinkercad.com/things/bSyJs89xSun-keycodeino?sharecode=3I0GEFATDZZp3FHBL9BgJEN8OFvQEEiWSVsZ9AxW17w"
+              target="_blank"
+            >
+              <img class="main-imgs project" src="Schematic Arduino.png" />
             </a>
+          </div>
+          <h2>Mechanisms</h2>
+          <p>Door lock</p>
+          <ul>
+            <li>
+              The motor rotates 90 degrees to block the door from opening.
+            </li>
+            <li>
+              As the motor rotates back to 0 degrees the motor unblocks the
+              doors path, allowing it to open and close freely
+            </li>
+            <li>
+              *Seen in the
+              <a href="#demonstration"
+                ><u>How It Works video demonstration*</u></a
+              >
+            </li>
+          </ul>
+          <p class="margin-top">Keypad Door</p>
+          <ul>
+            <li>
+              A servo motor rotates 90 degrees, pushing the top of the door,
+              near the hinge, open. As the servo rotates back to 0 degrees, the
+              door collapses
+            </li>
+            <li>
+              *Seen in the
+              <a href="#demonstration"
+                ><u>How It Works video demonstration*</u></a
+              >
+            </li>
+          </ul>
+          <p>Keypad</p>
+          <div class="flexr">
+            <div class="change-width">
+              <ul>
+                <li>
+                  The Arduino sends a signal to each row, one at a time, and
+                  simultaneously checks the column pins to see if any are
+                  receiving the signal.
+                </li>
+                <li>
+                  If a button is pressed, the row signal passes through the
+                  button to a column pin, creating a closed circuit.
+                </li>
+                <li>
+                  By identifying which row and column are connected, the Arduino
+                  determines which button was pressed.
+                </li>
+              </ul>
+            </div>
+            <img id="img-small" src="IMG_6590.png" />
+          </div>
+          <p>Distance Sensor</p>
+          <ul>
+            <li>
+              The distance sensor works in a similar way to echolocation in bats
+              and dolphins
+            </li>
+            <li>The sensor consists of 2 ultrasonic transducers </li>
+            <ul>
+              <li>
+                One of these transducers (the trigger pin) outputs a sound pulse
+              </li>
+              <li>
+                The other transducer (echo pin) listens for this same sound
+                pulse
+              </li>
+              <li>The sound pulse bounces off objects near the sensor</li>
+              <li>
+                the length of time it takes for the sound pulse to travel to an
+                object, bounce off the object, and be received by the transducer
+                is the value this sensor outputs
+              </li>
+              <li>
+                This value can be used along with kinematics in order to find
+                the displacement an object has, from the sensor
+              </li>
+            </ul>
+          </ul>
+          <div class="center">
+            <img class="main-imgs" src="IMG_6590.png" />
+          </div>
+
+          <div class="coding">
+          <h1 class="coding-text">Code</h1>
+          <div class="card">
+            <div class="header">
+              <div class="top">
+                <div class="circle">
+                  <span class="red circle2"></span>
+                </div>
+                <div class="circle">
+                  <span class="yellow circle2"></span>
+                </div>
+                <div class="circle">
+                  <span class="green circle2"></span>
+                </div>
+                <div class="code-title">
+                  <p id="title2">Keypad.ino</p>
+                </div>
+              </div>
+            </div>
+            <div class="code-container">
+              <textarea class="area" id="code" name="code" readonly="">
+                /* 
+
+                Programmer: Austin Koola
+                
+                Date: Aug 21, 2024
+                
+                Program description: 
+                This program controls an arduino based safe. It does this with the use of a distance sensor, 
+                2 servo motors, and a 4x4 keypad
+                
+                
+                
+                This program is a door access control system that includes a 4x4 keypad, a distance sensor, 
+                and two servo motors. The keypad allows the user to enter a passcode, which the system 
+                will validate and unlock the door if correct. The correct passcode is "1234#", and after three 
+                incorrect attempts, the system locks the user out for two minutes before allowing further attempts. 
+                The distance sensor detects a hand, within 5 cm and automatically opens the door after 20 
+                consecutive detections. The door and locking mechanism are controlled by two servo motors, 
+                which open or close in response to passcode verification or proximity detection. The system 
+                also allows the user to reset the passcode by pressing the '*' key, locking the door, and 
+                then restarting the process.
+                
+                */
+                
+                //Including the keypad and servo libraries
+                #include <Keypad.h>
+                #include <Servo.h>
+                
+                //Initializing the number of rows and columns for the keypad
+                const byte ROWS = 4;
+                const byte COLS = 4;
+                
+                //Creating variables to hold the duration and distance for the distance sensor
+                long duration;
+                int distance;
+                
+                //Initializing the pins for the trigger and echo of the distance sensor
+                const int trig = 10;
+                const int echo = 11;
+                
+                //Creating a variable to see whether the door should be open or not
+                bool openDoor = false;
+                
+                // Creating a counter variable to count how many detections the distance sensor recieves
+                int counter = 0;
+                
+                //Initializing the keypad characters
+                char hexaKeys [ROWS][COLS] {
+                  {'1', '2', '3', 'A'},
+                  {'4', '5', '6', 'B'},
+                  {'7', '8', '9', 'C'},
+                  {'*', '0', '#', 'D'}
+                };
+                
+                //Initializing the pins for the keypad keys
+                byte rowPins [ROWS] = {9, 8, 7, 6};
+                byte colPins [COLS] = {5, 4, 3, 2};
+                
+                //Setting up the keypad, so the program can understand which keys were pressed
+                Keypad customKeypad = Keypad(makeKeymap(hexaKeys), rowPins, colPins, ROWS, COLS);
+                
+                //Initializing the door and lock servos
+                Servo door;
+                Servo lock;
+                
+                //Initializing the variable that holds what a user inputs on the keypad
+                String pass = "";
+                
+                //Creating a variable to hold the password needed to open the lock
+                String password = "1234#";
+                
+                //Initializing the variable that tracks the number of times the user has inputted the wrong password
+                int numTries;
+                
+                void setup() {
+                
+                  //Initializing the trigger pin of the distance sensor as an output
+                  pinMode(trig, OUTPUT);
+                  //Initializing the echo pin of the distance sensor as an input
+                  pinMode(echo, INPUT);
+                
+                  //Attaching the door and lock servos to their respective pins
+                  door.attach(12);
+                  lock.attach(13);
+                
+                  //Set the door and lock to their starting positions
+                  door.write(0);
+                  lock.write(0);
+                
+                  //Start the console
+                  Serial.begin(9600);
+                }
+                
+                //Gets the distance sensor's distance of an object by using a simple calculation
+                void getDistance() {
+                  //Set the trigger pin of the distance sensor off for 2 μs
+                  digitalWrite(trig, LOW);
+                  delayMicroseconds(2);
+                
+                  //Set the trigger pin of the distance sensor on for 11 μs then off
+                  digitalWrite(trig, HIGH);
+                  delayMicroseconds(11);
+                  digitalWrite(trig, LOW);
+                
+                  //The duration becomes how long the echo pin recieved the trigger pin's signal
+                  duration = pulseIn(echo, HIGH);
+                
+                  //The distance in centimeters is calculated using the duration
+                  distance = duration * 0.034 / 2;
+                }
+                
+                void loop() {
+                
+                  //Function to get the distance of an object from the distance sensor
+                  getDistance();
+                
+                  //Setting the character inputted from the keypad into a variable
+                  char customKey = customKeypad.getKey();
+                  
+                  // 
+                  if (distance == 5) {
+                    counter++;
+                  }
+                
+                  if (counter == 20) {
+                    openDoor = true;
+                    Serial.println("open");
+                    counter = 0;
+                  }
+                
+                  if (openDoor) {
+                    door.write(90);
+                  }
+                
+                   if (customKey == '*') {
+                    pass = "";
+                    lock.write(0);
+                    delay(1000);
+                    door.write(0);
+                    openDoor = false;
+                   }
+                
+                  if (customKey) {
+                    Serial.println(customKey);
+                    
+                    if (customKey != '*') {
+                      pass += customKey;
+                    }
+                
+                    Serial.println(pass);
+                    if (customKey == '#') {
+                      if (pass == password) {
+                        Serial.println("You have entered the CORRECT password, welcome.");
+                        lock.write(90);
+                      }
+                      else {
+                        Serial.println("You have entered the WRONG password, try again.");
+                        pass = "";
+                        numTries++;
+                      }
+                
+                    if (numTries > 3) {
+                        Serial.println("You have entered the WRONG password too many times, try again in 2 minutes.");
+                        
+                        delay(1000);
+                        door.write(0);
+                        openDoor = false;
+                
+                        delay(120000); //2 minutes
+                
+                        numTries = 0;
+                      }
+                    }
+                  }
+                }</textarea
+              >
+            </div>
+          </div>
         </div>
+        <h1 class="header-text">Results<h1>
+        <h2>I was able to keep my snacks safe!</h2>
+        <div></div>
+        <h1 class="header-text">Challenges/Lessons Learned</h1>
+        
+        <h2>Incorrect wiring, causing the circuit to short
+        </h2>
+<ul><li>I fixed this by re arranging the 5V and GND pins after seeing the Arduino’s power light dimming after turning the circuit on</li></ul>
 
-        <nav class="nav-items"> 
-            <a href="projects.html">projects</a>
-            <a href="about_me.html">about me</a>
-            <a href="contact.html">contact</a>
-        </nav>
+      </div>
     </div>
-
-    <h1>Arduino</h1>
-
-    <div>
-        <div class="arduino-images">            
-            <video controls muted>
-                <source src="Arduino Project/IMG_6718.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-
-            <video autoplay muted>
-                <source src="Arduino Project/IMG_6720.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-
-            <video autoplay muted>
-                <source src="Arduino Project/IMG_6721.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-
-            <video autoplay muted>
-                <source src="Arduino Project/IMG_6728.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-
-            <video autoplay muted>
-                <source src="Arduino Project/IMG_6743.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-
-            <video autoplay muted>
-                <source src="Arduino Project/IMG_6747.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-
-            <video autoplay muted>
-                <source src="Arduino Project/IMG_6748.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-
-            <img src="Arduino Project/IMG_6590.png" alt="arduino project" style="border: none;">
-            <img src="Arduino Project/IMG_6712.png" alt="arduino project" style="border: none;">
-            <img src="Arduino Project/IMG_6722.png" alt="arduino project" style="border: none;">
-            <img src="Arduino Project/IMG_6723.png" alt="arduino project" style="border: none;">
-            <img src="Arduino Project/IMG_6724.png" alt="arduino project" style="border: none;">
-        </div>
-    </div>
-</body>
+  </body>
 </html>
