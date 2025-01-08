@@ -285,7 +285,7 @@ ol {
 
 .flexr {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding-bottom: 50px;
 }
 
@@ -397,18 +397,25 @@ a {
   justify-content: center;
   align-content: center;
   flex-wrap: wrap;
-  gap: 100px;
-  border: 2px solid white;
+  gap: 50px 100px;
 }
 
 .img-box img {
-  border: 2px solid white;
-  width: 20vw;
+  width: 15vw;
   height: auto;
 }
 
 .yurp {
   text-align: center;
+}
+
+#vexcode {
+  width: 10vw;
+  height: auto;
+}
+
+.vex-imgs {
+  width: 30vw;
 }
 
 /* width */
