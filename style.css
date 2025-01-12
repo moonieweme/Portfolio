@@ -285,7 +285,7 @@ ol {
 
 .flexr {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   padding-bottom: 50px;
 }
 
@@ -294,8 +294,9 @@ ol {
 }
 
 #img-small {
-  width: 30vw;
+  width: 35vw;
   height: auto;
+  padding-right: 10vw;
 }
 
 /*CODING*/
@@ -416,6 +417,10 @@ a {
 
 .vex-imgs {
   width: 30vw;
+}
+
+.small-space {
+  padding: 50px 0;
 }
 
 /* width */
