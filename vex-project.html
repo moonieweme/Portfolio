@@ -103,30 +103,20 @@
               <ol>
                 <li>First Path</li>
                 <ul>
-                <li>
-                  Place an object (e.g., your hand) 5 cm away from the distance
-                  sensor to open the keypad door.
-                </li>
-                <li>
-                  Once the keypad door is open, enter a 4-digit PIN and press the
-                  * symbol to submit it.
-                </li>
-                <li>
-                  If the PIN is entered incorrectly three times, the keypad door
-                  will automatically close and remain locked for 2 minutes before
-                  it can be reopened.
-                </li>
-                <li>
-                  After entering the correct PIN, the safe door will unlock. Use
-                  the magnet key to swing it open.
-                </li>
-                <li>Place or retrieve your valuables from the safe.</li>
-                <li>
-                  To secure the safe, close the safe door and press the # button
-                  to lock it. The keypad door will also close automatically.
-                </li>
+                  <li>The robot uses its drivetrain's four primary wheels along with the center omni wheel to move diagonally towards the first ball spot.</li>
+                  <li>It then moves forward while intaking the two balls.</li>
+                  <li>The track then switches, and when the front bumper detects the wall in front of the robot, it stops its forward movement.</li>
+                  <li>With 2 balls in the ball track, the robot moves backwards and begins to approach the second ball spot.</li>
+                  <li>It then moves forward while intaking the last two balls.</li>
+                  <li>With the full ball rack, the robot then approaches the first cube with its back.</li>
+                  <li>As the back bumper detects the presence of the cube, it releases the ball rack onto the top of the cube.</li>
+                  <ul>
+                  <li>The color sensor detects the color of the cube.</li>
+                  </ul>
+                  <li>The robot then makes the decision of which corner to bring the cube, based on the color.</li>
+                  <li>The robot rotates to have the front face the cube, so that the intake can grasp onto the cube and drag it to its respective corner.</li>
+                </ul>
                 
-            </ul>
             <li>Second Path</li>
             <ul><li>This process is repeated from path 1, but mirrored for the other side of the field</li></ul>
               </ol>
